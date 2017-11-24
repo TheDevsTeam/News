@@ -30,9 +30,10 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Use unicorn as the app server
+gem 'unicorn'
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
+# gem 'capistrano-rails',
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 # gem 'bootstrap', '~> 4.0.0.alpha6'
 # gem 'bootstrap', '~> 4.0.0.alpha3'
@@ -62,6 +63,10 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+gem 'capistrano', '~> 3.10', group: :development
+gem 'capistrano-rails', '~> 1.3', '>= 1.3.1', group: :development
+gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.3', group: :development
 
 
 group :production do
