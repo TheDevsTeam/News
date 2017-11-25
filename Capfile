@@ -19,6 +19,15 @@ install_plugin Capistrano::SCM::Git
 #
 # For documentation on these, see for example:
 #
+
+require "capistrano/rbenv"
+set :rbenv_type, :appuser # or :system, depends on your rbenv setup
+set :rbenv_ruby, '2.4.2p198'
+
+require "capistrano/bundler"
+require "capistrano/rails"
+require "capistrano/rails/assets"
+
 #   https://github.com/capistrano/rvm
 #   https://github.com/capistrano/rbenv
 #   https://github.com/capistrano/chruby
@@ -26,13 +35,7 @@ install_plugin Capistrano::SCM::Git
 #   https://github.com/capistrano/rails
 #   https://github.com/capistrano/passenger
 #
-require "capistrano/rbenv"
-set :rbenv_type, :appuser # or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.3.1'
-
-require "capistrano/bundler"
-require "capistrano/rails/assets"
-# require "capistrano/rails"
+# require 'capistrano/rbenv'
 
 
 #require "capistrano/rvm"

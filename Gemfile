@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-source 'https://rubygems.org'
+# source 'https://rubygems.org'
 ruby "2.4.2"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
@@ -63,10 +63,13 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-  gem 'capistrano', '~> 3.10',group: :development
-  gem 'capistrano-rails', '~> 1.3', '>= 1.3.1',group: :development
-  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.3',group: :development
+group :development do
+  gem 'capistrano', '~> 3.10'
+  gem 'capistrano-rbenv', '~> 2.1'
+  gem 'capistrano-bundler', '~> 1.3'
+  gem 'capistrano-rails', '~> 1.3', '>= 1.3.1'
+  gem 'capistrano-rails-console', '~> 2.2', '>= 2.2.1'
+end
 
 group :production do
 gem 'pg'
@@ -75,3 +78,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'rvm-capistrano'
