@@ -2,11 +2,11 @@
 lock "~> 3.10.0"
 
 set :application, "News"
-set :repo_url, "https://github.com/TheDevsTeam/News.git"
+set :repo_url, "git@github.com:TheDevsTeam/News.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-
+set :tmp_dir, "/home/deploy"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/appuser/News"
 
